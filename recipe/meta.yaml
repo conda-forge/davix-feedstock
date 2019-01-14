@@ -10,7 +10,7 @@ source:
   sha256: 722f522f5d6cad15cb6b840967417f870d465fc1a98b04295718a72e5018a0b6
 
 build:
-  number: 1000
+  number: 1001
   skip: True  # [win]
   run_exports:
     strong:
