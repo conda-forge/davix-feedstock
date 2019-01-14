@@ -1,0 +1,23 @@
+c_compiler:
+- gcc
+channel_sources:
+- conda-forge/label/gcc7,defaults
+channel_targets:
+- conda-forge gcc7
+cxx_compiler:
+- gxx
+docker_image:
+- condaforge/linux-anvil
+libuuid:
+- 2.32.1
+libxml2:
+- '2.9'
+openssl:
+- 1.0.2
+pin_run_as_build:
+  libuuid:
+    max_pin: x
+  libxml2:
+    max_pin: x.x
+  openssl:
+    max_pin: x.x.x
