@@ -1,3 +1,5 @@
+build_number_decrement:
+- '0'
 c_compiler:
 - gcc
 channel_sources:
@@ -7,7 +9,7 @@ channel_targets:
 cxx_compiler:
 - gxx
 docker_image:
-- condaforge/linux-anvil
+- condaforge/linux-anvil-comp7
 libuuid:
 - 2.32.1
 libxml2:
@@ -21,3 +23,10 @@ pin_run_as_build:
     max_pin: x.x
   openssl:
     max_pin: x.x.x
+zip_keys:
+- - c_compiler
+  - cxx_compiler
+  - channel_sources
+  - channel_targets
+  - docker_image
+  - build_number_decrement
