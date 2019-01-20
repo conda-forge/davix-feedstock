@@ -10,7 +10,7 @@ source:
   sha256: 722f522f5d6cad15cb6b840967417f870d465fc1a98b04295718a72e5018a0b6
 
 build:
-  number: 1002
+  number: 1003
   skip: True  # [win]
   run_exports:
     # https://abi-laboratory.pro/tracker/timeline/davix/
@@ -34,6 +34,10 @@ test:
   commands:
     # We expect davix-ls to exit with 1 if everything is okay
     - bash -c 'davix-ls --help && exit 3 || [ $? -eq 1 ]'
+    # Check the pkg-config file is as expected
+    - cat "${PREFIX}/lib/pkgconfig/davix.pc"
+    - grep -q "${PREFIX}" "${PREFIX}/lib/pkgconfig/davix.pc"
+    - bash -c 'grep -q "lib64" "${PREFIX}/lib/pkgconfig/davix.pc" && exit 3 || [ $? -eq 1 ]'
 
 about:
   home: https://dmc.web.cern.ch/projects/davix/home
@@ -52,4 +56,7 @@ about:
 
 extra:
   recipe-maintainers:
+    - bluehood
     - chrisburr
+    - egpbos
+    - henryiii
