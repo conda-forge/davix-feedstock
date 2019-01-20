@@ -10,7 +10,7 @@ source:
   sha256: 722f522f5d6cad15cb6b840967417f870d465fc1a98b04295718a72e5018a0b6
 
 build:
-  number: 1002
+  number: 1003
   skip: True  # [win]
   run_exports:
     # https://abi-laboratory.pro/tracker/timeline/davix/
