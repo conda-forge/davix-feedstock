@@ -1,5 +1,5 @@
 {% set name = "davix" %}
-{% set version = "0.6.7" %}
+{% set version = "0.7.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/cern-it-sdc-id/{{ name }}/archive/R_{{ version.replace('.', '_') }}.tar.gz
-  sha256: da1f65a86a4ebc3fb825b70a2b1147b72757003ca0ddfce4169d7fff4863de6f
+  sha256: 2549e5fb3ee571754bc8eef6c7ffec9621eb9dca14dbbd217c152e3ad8c1365b
 
 build:
   number: 0
