@@ -1,16 +1,16 @@
 {% set name = "davix" %}
-{% set version = "0.6.8" %}
+{% set version = "0.6.7" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://github.com/cern-it-sdc-id/{{ name }}/archive/R_0_6_8.tar.gz
-  sha256: 722f522f5d6cad15cb6b840967417f870d465fc1a98b04295718a72e5018a0b6
+  url: https://github.com/cern-it-sdc-id/{{ name }}/archive/R_{{ version.replace('.', '_') }}.tar.gz
+  sha256: da1f65a86a4ebc3fb825b70a2b1147b72757003ca0ddfce4169d7fff4863de6f
 
 build:
-  number: 1007
+  number: 0
   skip: True  # [win]
   run_exports:
     # https://abi-laboratory.pro/tracker/timeline/davix/
@@ -24,11 +24,11 @@ requirements:
   host:
     - openssl
     - libxml2
-    - libuuid  # [linux]
+    - libuuid
   run:
     - openssl
     - libxml2
-    - libuuid  # [linux]
+    - libuuid
 
 test:
   commands:
