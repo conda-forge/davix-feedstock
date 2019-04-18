@@ -24,11 +24,11 @@ requirements:
   host:
     - openssl
     - libxml2
-    - libuuid  # [linux]
+    - libuuid
   run:
     - openssl
     - libxml2
-    - libuuid  # [linux]
+    - libuuid
 
 test:
   commands:
