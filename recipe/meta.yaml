@@ -10,11 +10,13 @@ source:
   sha256: da1f65a86a4ebc3fb825b70a2b1147b72757003ca0ddfce4169d7fff4863de6f
 
 build:
-  number: 0
+  number: 1
   skip: True  # [win]
   run_exports:
     # https://abi-laboratory.pro/tracker/timeline/davix/
     - {{ pin_subpackage('davix', max_pin='x.x.x') }}
+  ignore_run_exports:
+    - libuuid
 
 requirements:
   build:
@@ -28,7 +30,6 @@ requirements:
   run:
     - openssl
     - libxml2
-    - libuuid
 
 test:
   commands:
