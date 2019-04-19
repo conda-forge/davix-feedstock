@@ -10,10 +10,9 @@ else
     cmake_args=""
 fi
 
-cmake \
+cmake -LAH \
     -DCMAKE_BUILD_TYPE=release \
     -DCMAKE_INSTALL_PREFIX="${PREFIX}" \
-    -DCMAKE_INSTALL_LIBDIR="${PREFIX}/lib" \
     -DCMAKE_PREFIX_PATH="${PREFIX}" \
     -DCMAKE_INSTALL_RPATH="${PREFIX}/lib" \
     -DCMAKE_BUILD_WITH_INSTALL_RPATH=ON \
@@ -32,3 +31,4 @@ if [ "$(uname)" == "Linux" ]; then
     sed -i 's@${prefix}/lib64@${prefix}/lib@g' "${PREFIX}/lib/pkgconfig/davix.pc"
     cat "${PREFIX}/lib/pkgconfig/davix.pc"
 fi
+
