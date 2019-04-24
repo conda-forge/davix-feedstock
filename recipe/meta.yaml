@@ -16,7 +16,7 @@ build:
   skip: True  # [win]
   run_exports:
     # https://abi-laboratory.pro/tracker/timeline/davix/
-    - {{ pin_subpackage('davix', max_pin='x.x.x') }}
+    - {{ pin_subpackage('davix', max_pin='x.x') }}
   ignore_run_exports:
     - libuuid
 
