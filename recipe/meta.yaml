@@ -1,15 +1,15 @@
 {% set name = "davix" %}
-{% set version = "0.7.2" %}
+{% set version = "0.7.3" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  # The git information is needed at build time
-  # FIXME: This should be patched upstream
-  git_url: https://github.com/cern-it-sdc-id/{{ name }}.git
-  git_rev: R_{{ version.replace('.', '_') }}
+  url: https://github.com/cern-fts/davix/releases/download/R_{{ version.replace('.', '_') }}/davix-{{ version }}.tar.gz
+  sha256: cd46276e72c6a0da1e2ad30eb66ec509a4c023687767c62a66713fa8c23d328a
+  patches:
+    - 0001-Ensure-the-correct-git-repository-is-found-by-genver.patch
 
 build:
   number: 0
