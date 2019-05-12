@@ -12,7 +12,7 @@ source:
     - 0001-Ensure-the-correct-git-repository-is-found-by-genver.patch
 
 build:
-  number: 1
+  number: 2
   skip: True  # [win]
   run_exports:
     # https://abi-laboratory.pro/tracker/timeline/davix/
