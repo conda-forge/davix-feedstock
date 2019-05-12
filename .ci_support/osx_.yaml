@@ -29,3 +29,7 @@ pin_run_as_build:
     max_pin: x.x
   openssl:
     max_pin: x.x.x
+  zlib:
+    max_pin: x.x
+zlib:
+- '1.2'
