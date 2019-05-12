@@ -19,6 +19,7 @@ cmake -LAH \
     -DLIB_INSTALL_DIR="${PREFIX}/lib" \
     -DUUID_INCLUDE_DIR=${PREFIX}/include \
     -DUUID_LIBRARY=${PREFIX}/lib/libuuid.a \
+    -DENABLE_THIRD_PARTY_COPY=ON \
     ${cmake_args} \
     ..
 
