@@ -35,9 +35,11 @@ requirements:
     - libxml2
     - libuuid
     - gsoap
+    - zlib
   run:
     - openssl
     - libxml2
+    - zlib
 
 test:
   commands:
