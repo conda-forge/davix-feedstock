@@ -21,7 +21,7 @@ macos_machine:
 macos_min_version:
 - '10.9'
 openssl:
-- 1.0.2
+- 1.1.1a
 pin_run_as_build:
   libuuid:
     max_pin: x
@@ -29,3 +29,7 @@ pin_run_as_build:
     max_pin: x.x
   openssl:
     max_pin: x.x.x
+  zlib:
+    max_pin: x.x
+zlib:
+- '1.2'
