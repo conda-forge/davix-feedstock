@@ -1,5 +1,5 @@
 {% set name = "davix" %}
-{% set version = "0.7.3" %}
+{% set version = "0.7.4" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,10 @@ package:
 
 source:
   url: https://github.com/cern-fts/davix/releases/download/R_{{ version.replace('.', '_') }}/davix-{{ version }}.tar.gz
-  sha256: cd46276e72c6a0da1e2ad30eb66ec509a4c023687767c62a66713fa8c23d328a
-  patches:
-    - 0001-Ensure-the-correct-git-repository-is-found-by-genver.patch
+  sha256: 302a61ec90d597ab034da7eb1757b64c6b108f41e2d23145103c70bd273b80cc
 
 build:
-  number: 2
+  number: 0
   skip: True  # [win]
   run_exports:
     # https://abi-laboratory.pro/tracker/timeline/davix/
