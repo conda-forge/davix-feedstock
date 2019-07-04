@@ -8,8 +8,6 @@ package:
 source:
   url: https://github.com/cern-fts/davix/releases/download/R_{{ version.replace('.', '_') }}/davix-{{ version }}.tar.gz
   sha256: 302a61ec90d597ab034da7eb1757b64c6b108f41e2d23145103c70bd273b80cc
-  patches:
-    - 0001-Ensure-the-correct-git-repository-is-found-by-genver.patch
 
 build:
   number: 0
