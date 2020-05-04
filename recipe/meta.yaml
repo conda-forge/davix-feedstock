@@ -50,8 +50,7 @@ test:
 
 about:
   home: https://dmc.web.cern.ch/projects/davix/home
-  license: LGPL-2.1
-  license_family: LGPL
+  license: LGPL-2.1-only
   license_file: LICENSE
   summary: High-performance data access client for HTTP-based protocols. (WebDAV / S3 / Microsoft Azure / HTTP)
 
@@ -65,7 +64,6 @@ about:
 
 extra:
   recipe-maintainers:
-    - bluehood
     - chrisburr
     - egpbos
     - henryiii
