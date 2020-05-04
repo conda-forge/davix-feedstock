@@ -1,12 +1,12 @@
 {% set name = "davix" %}
-{% set version = "0.7.5" %}
+{% set version = "0_7_5" %}
 
 package:
   name: {{ name|lower }}
-  version: {{ version }}
+  version: {{ version.replace('_', '.') }}
 
 source:
-  url: https://github.com/cern-fts/davix/releases/download/R_{{ version.replace('.', '_') }}/davix-{{ version }}.tar.gz
+  url: https://github.com/cern-fts/davix/releases/download/R_{{ version }}/davix-{{ version.replace('_', '.') }}.tar.gz
   sha256: d920ca976846875d83af4dc50c99280bb3741fcf8351d5733453e70fa5fe6fc8
 
 build:
