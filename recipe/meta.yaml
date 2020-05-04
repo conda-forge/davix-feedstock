@@ -1,5 +1,5 @@
 {% set name = "davix" %}
-{% set version = "0_7_5" %}
+{% set version = "0_7_6" %}
 
 package:
   name: {{ name|lower }}
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://github.com/cern-fts/davix/releases/download/R_{{ version }}/davix-{{ version.replace('_', '.') }}.tar.gz
-  sha256: d920ca976846875d83af4dc50c99280bb3741fcf8351d5733453e70fa5fe6fc8
+  sha256: a2e7fdff29f7ba247a3bcdb08ab1db6d6ed745de2d3971b46526986caf360673
 
 build:
-  number: 1
-  skip: True  # [win]
+  number: 0
+  skip: true  # [win]
   run_exports:
     # https://abi-laboratory.pro/tracker/timeline/davix/
     - {{ pin_subpackage('davix', max_pin='x.x') }}
@@ -53,7 +53,7 @@ about:
   license: LGPL-2.1
   license_family: LGPL
   license_file: LICENSE
-  summary: 'High-performance data access client for HTTP-based protocols. (WebDAV / S3 / Microsoft Azure / HTTP)'
+  summary: High-performance data access client for HTTP-based protocols. (WebDAV / S3 / Microsoft Azure / HTTP)
 
   description: |
     The davix project aims to make file management over HTTP-based protocols
