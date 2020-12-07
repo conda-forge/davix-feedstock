@@ -20,6 +20,7 @@ build:
 
 requirements:
   build:
+    - gnuconfig  # [unix]
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - cmake
@@ -28,11 +29,12 @@ requirements:
     - python <3
     - sed
     - pkg-config
+    - gsoap
   host:
+    - gsoap
     - openssl
     - libxml2
     - libuuid
-    - gsoap
     - zlib
   run:
     - openssl
