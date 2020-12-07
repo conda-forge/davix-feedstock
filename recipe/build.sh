@@ -1,4 +1,6 @@
 #!/bin/bash
+# Get an updated config.sub and config.guess
+cp $BUILD_PREFIX/share/gnuconfig/config.* ./deps/libneon
 set -ex
 
 mkdir build-dir
@@ -10,7 +12,7 @@ else
     cmake_args=""
 fi
 
-cmake -LAH \
+cmake ${CMAKE_ARGS} -LAH \
     -DCMAKE_BUILD_TYPE=release \
     -DCMAKE_INSTALL_PREFIX="${PREFIX}" \
     -DCMAKE_PREFIX_PATH="${PREFIX}" \
