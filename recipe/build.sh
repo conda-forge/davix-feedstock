@@ -12,6 +12,9 @@ else
     cmake_args=""
 fi
 
+# Python 2 really is a build dependency so we don't care what platform it targets
+unset _CONDA_PYTHON_SYSCONFIGDATA_NAME
+
 cmake ${CMAKE_ARGS} -LAH \
     -DCMAKE_BUILD_TYPE=release \
     -DCMAKE_INSTALL_PREFIX="${PREFIX}" \
@@ -22,6 +25,8 @@ cmake ${CMAKE_ARGS} -LAH \
     -DUUID_INCLUDE_DIR=${PREFIX}/include \
     -DUUID_LIBRARY=${PREFIX}/lib/libuuid.a \
     -DENABLE_THIRD_PARTY_COPY=ON \
+    -DGSOAP_WSDL2H=$BUILD_PREFIX/bin/wsdl2h \
+    -DGSOAP_SOAPCPP2=$BUILD_PREFIX/bin/soapcpp2 \
     ${cmake_args} \
     ..
 

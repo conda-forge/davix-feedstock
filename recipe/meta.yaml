@@ -29,11 +29,12 @@ requirements:
     - python <3
     - sed
     - pkg-config
+    - gsoap
   host:
+    - gsoap
     - openssl
     - libxml2
     - libuuid
-    - gsoap
     - zlib
   run:
     - openssl
