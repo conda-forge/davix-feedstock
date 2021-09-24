@@ -25,8 +25,6 @@ pin_run_as_build:
     max_pin: x
   libxml2:
     max_pin: x.x
-  openssl:
-    max_pin: x.x.x
   zlib:
     max_pin: x.x
 target_platform:
@@ -34,5 +32,7 @@ target_platform:
 zip_keys:
 - - c_compiler_version
   - cxx_compiler_version
+- - cdt_name
+  - docker_image
 zlib:
 - '1.2'
