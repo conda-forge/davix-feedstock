@@ -1,5 +1,5 @@
 {% set name = "davix" %}
-{% set version = "0_7_6" %}
+{% set version = "0_8_0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/cern-fts/davix/releases/download/R_{{ version }}/davix-{{ version.replace('_', '.') }}.tar.gz
-  sha256: a2e7fdff29f7ba247a3bcdb08ab1db6d6ed745de2d3971b46526986caf360673
+  sha256: 2f108da0408a83fb5b9f0c68150d360ba733e4b3a0fe298d45b0d32d28ab7124
 
 build:
   number: 0
