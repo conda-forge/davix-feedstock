@@ -12,6 +12,8 @@ cxx_compiler:
 - clangxx
 cxx_compiler_version:
 - '11'
+gsoap:
+- 2.8.117
 libuuid:
 - 2.32.1
 libxml2:
