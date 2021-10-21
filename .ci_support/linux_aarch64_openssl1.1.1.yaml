@@ -21,7 +21,7 @@ docker_image:
 gsoap:
 - 2.8.117
 libuuid:
-- 2.32.1
+- '2'
 libxml2:
 - '2.9'
 openssl:
