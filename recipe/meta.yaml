@@ -35,11 +35,11 @@ requirements:
     - openssl
     - libxml2
     - libuuid
-    - zlib
+    - libzlib
   run:
     - openssl
     - libxml2
-    - zlib
+    - libzlib
 
 test:
   commands:
