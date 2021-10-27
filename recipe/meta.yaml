@@ -8,6 +8,8 @@ package:
 source:
   url: https://github.com/cern-fts/davix/releases/download/R_{{ version }}/davix-{{ version.replace('_', '.') }}.tar.gz
   sha256: 2f108da0408a83fb5b9f0c68150d360ba733e4b3a0fe298d45b0d32d28ab7124
+  patches:
+    - system-curl.patch
 
 build:
   number: 1
@@ -33,13 +35,13 @@ requirements:
   host:
     - gsoap
     - openssl
+    - curl
     - libxml2
     - libuuid
-    - libzlib
   run:
     - openssl
+    - libcurl
     - libxml2
-    - libzlib
 
 test:
   commands:

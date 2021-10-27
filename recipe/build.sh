@@ -27,6 +27,7 @@ cmake ${CMAKE_ARGS} -LAH \
     -DENABLE_THIRD_PARTY_COPY=ON \
     -DGSOAP_WSDL2H=$BUILD_PREFIX/bin/wsdl2h \
     -DGSOAP_SOAPCPP2=$BUILD_PREFIX/bin/soapcpp2 \
+    -DEMBEDDED_LIBCURL=OFF \
     ${cmake_args} \
     ..
 
