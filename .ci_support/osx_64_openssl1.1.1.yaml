@@ -5,9 +5,11 @@ c_compiler:
 c_compiler_version:
 - '11'
 channel_sources:
-- conda-forge,defaults
+- conda-forge
 channel_targets:
 - conda-forge main
+curl:
+- '7'
 cxx_compiler:
 - clangxx
 cxx_compiler_version:
@@ -15,7 +17,7 @@ cxx_compiler_version:
 gsoap:
 - 2.8.117
 libuuid:
-- 2.32.1
+- '2'
 libxml2:
 - '2.9'
 macos_machine:
@@ -23,16 +25,14 @@ macos_machine:
 openssl:
 - 1.1.1
 pin_run_as_build:
+  curl:
+    max_pin: x
   libuuid:
     max_pin: x
   libxml2:
-    max_pin: x.x
-  zlib:
     max_pin: x.x
 target_platform:
 - osx-64
 zip_keys:
 - - c_compiler_version
   - cxx_compiler_version
-zlib:
-- '1.2'
