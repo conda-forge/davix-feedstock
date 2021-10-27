@@ -34,10 +34,3 @@ cmake ${CMAKE_ARGS} -LAH \
 make -j${CPU_COUNT}
 
 make install
-
-if [ "$(uname)" == "Linux" ]; then
-    # The generated pkg-config file has the wrong lib directory, fix it...
-    sed -i 's@${prefix}/lib64@${prefix}/lib@g' "${PREFIX}/lib/pkgconfig/davix.pc"
-    cat "${PREFIX}/lib/pkgconfig/davix.pc"
-fi
-

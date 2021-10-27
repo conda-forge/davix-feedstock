@@ -10,6 +10,8 @@ source:
   sha256: 2f108da0408a83fb5b9f0c68150d360ba733e4b3a0fe298d45b0d32d28ab7124
   patches:
     - system-curl.patch
+    # set LIB_SUFFIX to empty to install everything in '/lib/'
+    - lib-suffix.patch
 
 build:
   number: 1
@@ -29,7 +31,6 @@ requirements:
     - make
     - git
     - python
-    - sed
     - pkg-config
     - gsoap
   host:
