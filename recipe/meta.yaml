@@ -26,7 +26,7 @@ requirements:
     - cmake
     - make
     - git
-    - python <3
+    - python
     - sed
     - pkg-config
     - gsoap
