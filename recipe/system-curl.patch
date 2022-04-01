@@ -1,42 +1,34 @@
-diff --git a/CMakeLists.txt b/CMakeLists.txt
-index c65ed46b..fd5d2d3d 100644
---- a/CMakeLists.txt
-+++ b/CMakeLists.txt
-@@ -117,6 +117,8 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${CXX11_FLAG_ENABLE}")
- if(EMBEDDED_LIBCURL)
-   include(buildCurl REQUIRED)
-   buildCurl()
-+else(EMBEDDED_LIBCURL)
-+  find_package(CURL REQUIRED)
- endif()
- 
- include_directories(${CMAKE_CURRENT_SOURCE_DIR}/deps/libneon/src/ ${UUID_INCLUDE_DIRS})
+From 3fa79a56d8dd2b7d768d25eb7158c9c811c1ecbf Mon Sep 17 00:00:00 2001
+From: Chris Burr <christopher.burr@cern.ch>
+Date: Fri, 1 Apr 2022 13:15:52 +0200
+Subject: [PATCH 1/2] system-curl
+
+---
+ src/CMakeLists.txt | 4 ++++
+ 1 file changed, 4 insertions(+)
+
 diff --git a/src/CMakeLists.txt b/src/CMakeLists.txt
-index 79a8858b..5cdc88f3 100644
+index 86a2eaf2..c648dd24 100644
 --- a/src/CMakeLists.txt
 +++ b/src/CMakeLists.txt
-@@ -108,11 +108,11 @@ add_library(libdavix  SHARED ${DAVIX_SOURCES} )
- 
- target_include_directories(libdavix PRIVATE ${DAVIX_INTERNAL_INCLUDES} )
- target_link_libraries(libdavix
--  PRIVATE libcurl
-   PUBLIC ${LIBSSL_PKG_LIBRARIES}
-          ${LIBXML2_LIBRARIES}
+@@ -113,6 +113,7 @@ target_link_libraries(libdavix
           ${CMAKE_THREAD_LIBS_INIT}
+          ${CMAKE_DL_LIBS}
           ${UUID_LIBRARIES}
 +         ${CURL_LIBRARIES}
           z
           ${SECURE_TRANSPORT_LIBRARIES}
  )
-@@ -146,10 +146,10 @@ set_target_properties(libdavix_static PROPERTIES
- target_include_directories(libdavix_static PRIVATE ${DAVIX_INTERNAL_INCLUDES} )
- 
+@@ -149,6 +150,9 @@ target_include_directories(libdavix_static PRIVATE ${DAVIX_INTERNAL_INCLUDES} )
  target_link_libraries(libdavix_static
--  PRIVATE libcurl
-   PUBLIC  ${OPENSSL_LIBRARIES}
-           ${CMAKE_THREAD_LIBS_INIT}
-           dl ${UUID_LIBRARIES}
-+          ${CURL_LIBRARIES}
-           z
+   PRIVATE ${libcurl}
+   PUBLIC  ${LIBSSL_PKG_LIBRARIES}
++          ${CMAKE_THREAD_LIBS_INIT}
++          dl ${UUID_LIBRARIES}
++          z
            ${LIBXML2_LIBRARIES}
-           ${SECURE_TRANSPORT_LIBRARIES}
+           ${CMAKE_THREAD_LIBS_INIT}
+           ${CMAKE_DL_LIBS}
+-- 
+2.35.1
+
