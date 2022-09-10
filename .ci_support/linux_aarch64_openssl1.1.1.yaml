@@ -21,7 +21,7 @@ cxx_compiler_version:
 docker_image:
 - quay.io/condaforge/linux-anvil-cos7-x86_64
 gsoap:
-- 2.8.119
+- 2.8.123
 libuuid:
 - '2'
 libxml2:
