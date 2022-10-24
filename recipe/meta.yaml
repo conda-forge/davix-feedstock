@@ -39,6 +39,7 @@ requirements:
     - curl
     - libxml2
     - libuuid
+    - zlib
   run:
     - openssl
     - libcurl
