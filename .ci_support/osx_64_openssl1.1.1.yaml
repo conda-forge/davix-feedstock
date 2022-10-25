@@ -15,7 +15,7 @@ cxx_compiler:
 cxx_compiler_version:
 - '14'
 gsoap:
-- 2.8.119
+- 2.8.123
 libuuid:
 - '2'
 libxml2:
@@ -29,3 +29,5 @@ target_platform:
 zip_keys:
 - - c_compiler_version
   - cxx_compiler_version
+zlib:
+- '1.2'
