@@ -21,16 +21,9 @@ gsoap:
 libuuid:
 - '2'
 libxml2:
-- '2.9'
+- '2.10'
 openssl:
 - 1.1.1
-pin_run_as_build:
-  curl:
-    max_pin: x
-  libuuid:
-    max_pin: x
-  libxml2:
-    max_pin: x.x
 target_platform:
 - linux-ppc64le
 zip_keys:

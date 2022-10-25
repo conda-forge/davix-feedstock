@@ -1,5 +1,5 @@
 {% set name = "davix" %}
-{% set version = "0_8_2" %}
+{% set version = "0_8_3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/cern-fts/davix/releases/download/R_{{ version }}/davix-{{ version.replace('_', '.') }}.tar.gz
-  sha256: 8817a24c23f1309b9de233b9a882455f457c42edc2a649dc70fe2524cf76d94c
+  sha256: 7e30b5541e08d32dbf5ae03c6bcabeaec063aec10a6647787822227b4541ae3e
   patches:
     - system-curl.patch
     # set LIB_SUFFIX to empty to install everything in '/lib/'
@@ -39,6 +39,7 @@ requirements:
     - curl
     - libxml2
     - libuuid
+    - zlib
   run:
     - openssl
     - libcurl

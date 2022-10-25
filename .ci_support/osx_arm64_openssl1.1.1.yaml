@@ -3,7 +3,7 @@ MACOSX_DEPLOYMENT_TARGET:
 c_compiler:
 - clang
 c_compiler_version:
-- '13'
+- '14'
 channel_sources:
 - conda-forge
 channel_targets:
@@ -13,24 +13,17 @@ curl:
 cxx_compiler:
 - clangxx
 cxx_compiler_version:
-- '13'
+- '14'
 gsoap:
 - 2.8.119
 libuuid:
 - '2'
 libxml2:
-- '2.9'
+- '2.10'
 macos_machine:
 - arm64-apple-darwin20.0.0
 openssl:
 - 1.1.1
-pin_run_as_build:
-  curl:
-    max_pin: x
-  libuuid:
-    max_pin: x
-  libxml2:
-    max_pin: x.x
 target_platform:
 - osx-arm64
 zip_keys:
