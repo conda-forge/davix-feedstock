@@ -3,6 +3,10 @@
 cp $BUILD_PREFIX/share/gnuconfig/config.* ./deps/libneon
 set -ex
 
+# https://github.com/cern-fts/davix/issues/104
+tar xvf davix-0.8.4.tar.gz
+cd davix-0.8.4
+
 mkdir build-dir
 cd build-dir
 
