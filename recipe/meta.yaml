@@ -9,9 +9,9 @@ source:
   url: https://github.com/cern-fts/davix/releases/download/R_{{ version }}/davix-{{ version.replace('_', '.') }}.tar.gz
   sha256: a1c129dcbe385dec7f16a526f1b57c39961aad16a7b9ede5da83175bd7c0c63e
   patches:
-    - system-curl.patch
+    - 0001-system-curl.patch
     # set LIB_SUFFIX to empty to install everything in '/lib/'
-    - lib-suffix.patch
+    - 0002-Fix-lib-suffix.patch
 
 build:
   number: 0
