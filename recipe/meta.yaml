@@ -1,5 +1,5 @@
 {% set name = "davix" %}
-{% set version = "0_8_3" %}
+{% set version = "0_8_4" %}
 
 package:
   name: {{ name|lower }}
@@ -7,14 +7,14 @@ package:
 
 source:
   url: https://github.com/cern-fts/davix/releases/download/R_{{ version }}/davix-{{ version.replace('_', '.') }}.tar.gz
-  sha256: 7e30b5541e08d32dbf5ae03c6bcabeaec063aec10a6647787822227b4541ae3e
-  patches:
-    - system-curl.patch
-    # set LIB_SUFFIX to empty to install everything in '/lib/'
-    - lib-suffix.patch
+  sha256: a1c129dcbe385dec7f16a526f1b57c39961aad16a7b9ede5da83175bd7c0c63e
+  # patches:
+  #   - 0001-system-curl.patch
+  #   # set LIB_SUFFIX to empty to install everything in '/lib/'
+  #   - 0002-Fix-lib-suffix.patch
 
 build:
-  number: 1
+  number: 0
   skip: true  # [win]
   run_exports:
     # https://abi-laboratory.pro/tracker/timeline/davix/

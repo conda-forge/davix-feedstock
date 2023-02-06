@@ -1,4 +1,11 @@
 #!/bin/bash
+# https://github.com/cern-fts/davix/issues/104
+tar xvf davix-0.8.4.tar.gz
+cd davix-0.8.4
+cp LICENSE ..
+patch -p1 <$RECIPE_DIR/0001-system-curl.patch
+patch -p1 <$RECIPE_DIR/0002-Fix-lib-suffix.patch
+
 # Get an updated config.sub and config.guess
 cp $BUILD_PREFIX/share/gnuconfig/config.* ./deps/libneon
 set -ex
