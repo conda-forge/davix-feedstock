@@ -1,11 +1,11 @@
-About davix
-===========
+About davix-feedstock
+=====================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/davix-feedstock/blob/main/LICENSE.txt)
 
 Home: https://dmc.web.cern.ch/projects/davix/home
 
 Package license: LGPL-2.1-only
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/davix-feedstock/blob/main/LICENSE.txt)
 
 Summary: High-performance data access client for HTTP-based protocols. (WebDAV / S3 / Microsoft Azure / HTTP)
 
