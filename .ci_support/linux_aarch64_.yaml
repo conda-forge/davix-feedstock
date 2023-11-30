@@ -25,7 +25,7 @@ gsoap:
 libuuid:
 - '2'
 libxml2:
-- '2.11'
+- '2.12'
 openssl:
 - '3'
 target_platform:
