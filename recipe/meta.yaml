@@ -1,5 +1,5 @@
 {% set name = "davix" %}
-{% set version = "0_8_6" %}
+{% set version = "0_8_7" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/cern-fts/davix/releases/download/R_{{ version }}/davix-{{ version.replace('_', '.') }}.tar.gz
-  sha256: 7383b6f6595c77a9dc8c03c5483c67dc32bd6d23751e956cf9c174768e7eeb5b
+  sha256: 78c24e14edd7e4e560392d67147ec8658c2aa0d3640415bdf6bc513afcf695e6
   patches:
     - 0001-system-curl.patch
     # set LIB_SUFFIX to empty to install everything in '/lib/'
@@ -26,6 +26,7 @@ requirements:
   build:
     - gnuconfig  # [unix]
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
     - {{ compiler('cxx') }}
     - cmake
     - make
