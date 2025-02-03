@@ -38,8 +38,8 @@ requirements:
     - python >=3.9
     - pkg-config
     - gsoap
-    - gtest
   host:
+    - gtest
     - gsoap
     - openssl
     - curl
