@@ -30,7 +30,7 @@ requirements:
     - cmake
     - make
     - git
-    - python
+    - python >=3.9
     - pkg-config
     - gsoap
     - gtest
