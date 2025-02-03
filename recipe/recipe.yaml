@@ -13,12 +13,17 @@ source:
   sha256: 0dc7e3702500fc4a88e037ababf096e8c1cad2532c34e08add043d4dc84283f6
   patches:
     - 0001-system-curl.patch
-    # set LIB_SUFFIX to empty to install everything in '/lib/'
     - 0002-Fix-lib-suffix.patch
+    - 0003-Get-rid-of-forced-C-11.patch
 
 build:
   number: 0
   skip: win
+  files:
+    include:
+      - "**"
+    exclude:
+      - bin/davix-unit-test
 
 requirements:
   build:
@@ -28,7 +33,7 @@ requirements:
     - ${{ stdlib("c") }}
     - ${{ compiler('cxx') }}
     - cmake
-    - make
+    - ninja
     - git
     - python >=3.9
     - pkg-config

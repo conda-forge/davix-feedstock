@@ -16,6 +16,7 @@ fi
 unset _CONDA_PYTHON_SYSCONFIGDATA_NAME
 
 cmake ${CMAKE_ARGS} -LAH \
+    -GNinja \
     -DCMAKE_BUILD_TYPE=release \
     -DCMAKE_INSTALL_PREFIX="${PREFIX}" \
     -DCMAKE_PREFIX_PATH="${PREFIX}" \
@@ -31,6 +32,6 @@ cmake ${CMAKE_ARGS} -LAH \
     ${cmake_args} \
     ..
 
-make -j${CPU_COUNT}
+cmake --build . --target install -- -j${CPU_COUNT}
 
-make install
+cmake --build . --target install

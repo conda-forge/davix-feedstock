@@ -1,7 +1,7 @@
-From e03f45c4037e84ef87e81884f4b4c91cbb9b8775 Mon Sep 17 00:00:00 2001
+From 74124bf346e9a1af0b32f795a3b2e70c32af33a6 Mon Sep 17 00:00:00 2001
 From: Chris Burr <christopher.burr@cern.ch>
 Date: Sun, 5 Feb 2023 14:11:15 +0100
-Subject: [PATCH 2/2] Fix lib suffix
+Subject: [PATCH 2/3] Fix lib suffix
 
 ---
  cmake/modules/DefineInstallationPaths.cmake | 12 +-----------
@@ -31,5 +31,5 @@ index 92215f3c..58d6f237 100644
  
  #  correct cmake netpath issue with cmake 2.8
 -- 
-2.37.1 (Apple Git-137.1)
+2.47.0
 
