@@ -1,0 +1,83 @@
+schema_version: 1
+
+context:
+  name: davix
+  version: 0_8_9
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version | replace('_', '.') }}
+
+source:
+  url: https://github.com/cern-fts/davix/releases/download/R_${{ version }}/davix-${{ version | replace('_', '.') }}.tar.gz
+  sha256: 0dc7e3702500fc4a88e037ababf096e8c1cad2532c34e08add043d4dc84283f6
+  patches:
+    - 0001-system-curl.patch
+    - 0002-Fix-lib-suffix.patch
+    - 0003-Get-rid-of-forced-C-11.patch
+
+build:
+  number: 0
+  skip: win
+  files:
+    include:
+      - "**"
+    exclude:
+      - bin/davix-unit-test
+
+requirements:
+  build:
+    - if: unix
+      then: gnuconfig
+    - ${{ compiler('c') }}
+    - ${{ stdlib("c") }}
+    - ${{ compiler('cxx') }}
+    - cmake
+    - ninja
+    - git
+    - python >=3.9
+    - pkg-config
+    - gsoap
+  host:
+    - gtest
+    - gsoap
+    - openssl
+    - curl
+    - libxml2
+    - libuuid
+    - zlib
+  run:
+    - openssl
+    - libcurl
+    - libxml2
+  run_exports:
+    - ${{ pin_subpackage('davix', upper_bound='x.x') }}
+  ignore_run_exports:
+    from_package:
+      - libuuid
+
+tests:
+  - script:
+      - "bash -c 'davix-ls --help && exit 3 || [ $? -eq 1 ]'"
+      - "cat \"${PREFIX}/lib/pkgconfig/davix.pc\""
+      - "grep -q \"${PREFIX}\" \"${PREFIX}/lib/pkgconfig/davix.pc\""
+      - "bash -c 'grep -q \"lib64\" \"${PREFIX}/lib/pkgconfig/davix.pc\" && exit 3 || [ $? -eq 1 ]'"
+
+about:
+  license: LGPL-2.1-only
+  license_file: LICENSE
+  summary: High-performance data access client for HTTP-based protocols. (WebDAV / S3 / Microsoft Azure / HTTP)
+  description: |
+    The davix project aims to make file management over HTTP-based protocols
+    simple. The focus is on high-performance remote I/O and data management of
+    large collections of files. Currently, there is support for the WebDav,
+    Amazon S3, Microsoft Azure, and HTTP protocols.
+  homepage: https://dmc.web.cern.ch/projects/davix/home
+  repository: https://github.com/cern-it-sdc-id/davix
+  documentation: https://dmc-docs.web.cern.ch/dmc-docs/versions/docs/davix-epel/html/
+
+extra:
+  recipe-maintainers:
+    - chrisburr
+    - egpbos
+    - henryiii

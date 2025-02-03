@@ -18,7 +18,6 @@ simple. The focus is on high-performance remote I/O and data management of
 large collections of files. Currently, there is support for the WebDav,
 Amazon S3, Microsoft Azure, and HTTP protocols.
 
-
 Current build status
 ====================
 
