@@ -13,3 +13,5 @@ provider:
   linux_ppc64le: default
 test: native_and_emulated
 conda_build_tool: rattler-build
+bot:
+  automerge: true
