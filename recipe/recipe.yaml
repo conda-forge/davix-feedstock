@@ -17,7 +17,7 @@ source:
     - 0003-Get-rid-of-forced-C-11.patch
 
 build:
-  number: 0
+  number: 1
   skip: win
   files:
     include:
@@ -43,13 +43,13 @@ requirements:
     - gsoap
     - openssl
     - curl
-    - libxml2
+    - libxml2-devel
     - libuuid
     - zlib
   run:
     - openssl
     - libcurl
-    - libxml2
+    - libxml2-devel
   run_exports:
     - ${{ pin_subpackage('davix', upper_bound='x.x') }}
   ignore_run_exports:
