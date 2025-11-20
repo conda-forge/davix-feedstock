@@ -15,6 +15,7 @@ source:
     - 0001-system-curl.patch
     - 0002-Fix-lib-suffix.patch
     - 0003-Get-rid-of-forced-C-11.patch
+    - 0004-gh-pr-141.patch
 
 build:
   number: 1
