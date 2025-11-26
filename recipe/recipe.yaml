@@ -16,6 +16,7 @@ source:
     - 0002-Fix-lib-suffix.patch
     - 0003-Get-rid-of-forced-C-11.patch
     - 0004-gh-pr-141.patch
+    - 0005-Replace-CMake-variable-with-imported-target.patch
 
 build:
   number: 1

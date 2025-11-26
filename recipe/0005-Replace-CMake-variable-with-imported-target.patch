@@ -1,0 +1,116 @@
+From c581b9b4d285382b171412d41ffe0150e7fef070 Mon Sep 17 00:00:00 2001
+From: Vincenzo Eduardo Padulano <v.e.padulano@gmail.com>
+Date: Wed, 26 Nov 2025 15:58:44 +0100
+Subject: [PATCH] Replace CMake variable with imported target
+
+---
+ src/CMakeLists.txt            | 4 ++--
+ src/tools/CMakeLists.txt      | 8 ++++----
+ test/bench/CMakeLists.txt     | 2 +-
+ test/slow-unit/CMakeLists.txt | 2 +-
+ test/unit/CMakeLists.txt      | 2 +-
+ 5 files changed, 9 insertions(+), 9 deletions(-)
+
+diff --git a/src/CMakeLists.txt b/src/CMakeLists.txt
+index e7fd99d5..16d8d7c5 100644
+--- a/src/CMakeLists.txt
++++ b/src/CMakeLists.txt
+@@ -111,7 +111,7 @@ target_link_libraries(libdavix
+   PRIVATE ${libcurl}
+   PUBLIC ${LIBSSL_PKG_LIBRARIES}
+          ${LIBXML2_LIBRARIES}
+-         ${CMAKE_THREAD_LIBS_INIT}
++         Threads::Threads
+          ${CMAKE_DL_LIBS}
+          ${UUID_LIBRARIES}
+          z
+@@ -152,7 +152,7 @@ target_link_libraries(libdavix_static
+   PRIVATE ${libcurl}
+   PUBLIC  ${LIBSSL_PKG_LIBRARIES}
+           ${LIBXML2_LIBRARIES}
+-          ${CMAKE_THREAD_LIBS_INIT}
++          Threads::Threads
+           ${CMAKE_DL_LIBS}
+           ${UUID_LIBRARIES}
+           z
+diff --git a/src/tools/CMakeLists.txt b/src/tools/CMakeLists.txt
+index 4bc31940..f15a02a4 100644
+--- a/src/tools/CMakeLists.txt
++++ b/src/tools/CMakeLists.txt
+@@ -28,7 +28,7 @@ set_target_properties(davix_tool PROPERTIES
+ ## davix ls cmd line
+ add_executable(davix_ls_tool davix_tool_ls_main.cpp)
+ 
+-target_link_libraries(davix_ls_tool davix_tool_lib libdavix ${CMAKE_THREAD_LIBS_INIT})
++target_link_libraries(davix_ls_tool davix_tool_lib libdavix Threads::Threads)
+ set_target_properties(davix_ls_tool PROPERTIES
+                                 OUTPUT_NAME "davix-ls")
+ 
+@@ -36,14 +36,14 @@ set_target_properties(davix_ls_tool PROPERTIES
+ ## davix get cmd line
+ add_executable(davix_get_tool davix_tool_get_main.cpp)
+ 
+-target_link_libraries(davix_get_tool davix_tool_lib libdavix pthread ${CMAKE_THREAD_LIBS_INIT})
++target_link_libraries(davix_get_tool davix_tool_lib libdavix pthread Threads::Threads)
+ set_target_properties(davix_get_tool PROPERTIES
+                                 OUTPUT_NAME "davix-get")
+ 
+ ## davix put cmd line
+ add_executable(davix_put_tool davix_tool_put_main.cpp)
+ 
+-target_link_libraries(davix_put_tool davix_tool_lib libdavix pthread ${CMAKE_THREAD_LIBS_INIT})
++target_link_libraries(davix_put_tool davix_tool_lib libdavix pthread Threads::Threads)
+ set_target_properties(davix_put_tool PROPERTIES
+                                 OUTPUT_NAME "davix-put")
+ 
+@@ -58,7 +58,7 @@ set_target_properties(davix_mkdir_tool PROPERTIES
+ ## davix rm cmd line
+ add_executable(davix_rm_tool davix_tool_rm_main.cpp)
+ 
+-target_link_libraries(davix_rm_tool davix_tool_lib libdavix ${CMAKE_THREAD_LIBS_INIT})
++target_link_libraries(davix_rm_tool davix_tool_lib libdavix Threads::Threads)
+ set_target_properties(davix_rm_tool PROPERTIES
+                                 OUTPUT_NAME "davix-rm")
+ 
+diff --git a/test/bench/CMakeLists.txt b/test/bench/CMakeLists.txt
+index 6a2c920e..f2faf028 100644
+--- a/test/bench/CMakeLists.txt
++++ b/test/bench/CMakeLists.txt
+@@ -7,7 +7,7 @@ LIST(APPEND src_davix_bench "davix_bench.cpp" "chunk_queue.cpp")
+ #include_directories(/usr/include/davix)
+ 
+ add_executable(davix-bench ${src_davix_bench})
+-target_link_libraries(davix-bench libdavix ${CMAKE_THREAD_LIBS_INIT})
++target_link_libraries(davix-bench libdavix Threads::Threads)
+ 
+ function(test_read url opt input)
+     add_test(test_bench_read_${url} davix-bench ${opt} ${url} ${input})
+diff --git a/test/slow-unit/CMakeLists.txt b/test/slow-unit/CMakeLists.txt
+index bf5571d6..64ad10d9 100644
+--- a/test/slow-unit/CMakeLists.txt
++++ b/test/slow-unit/CMakeLists.txt
+@@ -24,7 +24,7 @@ target_link_libraries(davix-slow-unit-tests
+   libdavix
+   GTest::GTest
+   GTest::Main
+-  ${CMAKE_THREAD_LIBS_INIT}
++  Threads::Threads
+   ${LIBSSL_PKG_LIBRARIES}
+ )
+ 
+diff --git a/test/unit/CMakeLists.txt b/test/unit/CMakeLists.txt
+index b2b3145a..0493eef5 100644
+--- a/test/unit/CMakeLists.txt
++++ b/test/unit/CMakeLists.txt
+@@ -40,7 +40,7 @@ target_link_libraries(davix-unit-tests
+   libdavix
+   GTest::GTest
+   GTest::Main
+-  ${CMAKE_THREAD_LIBS_INIT}
++  Threads::Threads
+   ${LIBSSL_PKG_LIBRARIES}
+ )
+ 
+-- 
+2.52.0
+
