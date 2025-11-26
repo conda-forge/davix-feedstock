@@ -1,0 +1,46 @@
+From 11df596461f64c078d921bb208ecc9d5fe533001 Mon Sep 17 00:00:00 2001
+From: Guilherme Amadio <amadio@cern.ch>
+Date: Tue, 9 Sep 2025 14:00:09 +0200
+Subject: [PATCH] Update CMake minimum requirement and supported versions
+
+Closes: #139
+---
+ CMakeLists.txt                  | 2 +-
+ deps/libneon/CMakeLists.txt     | 2 +-
+ src/modules/copy/CMakeLists.txt | 2 +-
+ 3 files changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 7d0abf32..04573909 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -1,7 +1,7 @@
+ #-------------------------------------------------------------------------------
+ # Initialize
+ #-------------------------------------------------------------------------------
+-cmake_minimum_required (VERSION 3.0)
++cmake_minimum_required (VERSION 3.16...4.1)
+ project (davix)
+ 
+ #-------------------------------------------------------------------------------
+diff --git a/deps/libneon/CMakeLists.txt b/deps/libneon/CMakeLists.txt
+index 59a83835..ff6ce73f 100644
+--- a/deps/libneon/CMakeLists.txt
++++ b/deps/libneon/CMakeLists.txt
+@@ -1,5 +1,5 @@
+ project(libneon-tuned)
+-cmake_minimum_required (VERSION 3.0)
++cmake_minimum_required (VERSION 3.16...4.1)
+ # main file for src
+ 
+ set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake/modules/")
+diff --git a/src/modules/copy/CMakeLists.txt b/src/modules/copy/CMakeLists.txt
+index f101e3b5..cc4dbbc7 100644
+--- a/src/modules/copy/CMakeLists.txt
++++ b/src/modules/copy/CMakeLists.txt
+@@ -1,4 +1,4 @@
+-cmake_minimum_required (VERSION 3.0)
++cmake_minimum_required (VERSION 3.16...4.1)
+ 
+ IF (ENABLE_THIRD_PARTY_COPY)
+     INCLUDE     (CheckLibraryExists)

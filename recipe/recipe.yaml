@@ -15,9 +15,11 @@ source:
     - 0001-system-curl.patch
     - 0002-Fix-lib-suffix.patch
     - 0003-Get-rid-of-forced-C-11.patch
+    - 0004-gh-pr-141.patch
+    - 0005-Replace-CMake-variable-with-imported-target.patch
 
 build:
-  number: 0
+  number: 1
   skip: win
   files:
     include:
@@ -43,13 +45,13 @@ requirements:
     - gsoap
     - openssl
     - curl
-    - libxml2
+    - libxml2-devel
     - libuuid
     - zlib
   run:
     - openssl
     - libcurl
-    - libxml2
+    - libxml2-devel
   run_exports:
     - ${{ pin_subpackage('davix', upper_bound='x.x') }}
   ignore_run_exports:
