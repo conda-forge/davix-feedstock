@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: davix
-  version: "0_8_10"
+  version: "0_9_0"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://github.com/cern-fts/davix/releases/download/R_${{ version }}/davix-${{ version | replace('_', '.') }}.tar.gz
-  sha256: 66aa9adadee6ff2bae14caba731597ba7a7cd158763d9d80a9cfe395afc17403
+  sha256: cf68461550fcd8fd88320658a42c55c7e7f6653e2be1461dfa95013adc56cced
   patches:
     - 0001-system-curl.patch
     - 0002-Fix-lib-suffix.patch
@@ -19,7 +19,7 @@ source:
     - 0005-Replace-CMake-variable-with-imported-target.patch
 
 build:
-  number: 1
+  number: 0
   skip: win
   files:
     include:
